@@ -2,10 +2,14 @@ pipeline {
   agent any 
   stages{
        stage('Compile') {
-            sh 'gcc -o prg1 prg1.c'
+           steps{
+              sh 'gcc -o prg1 prg1.c'
+           }
        }
        stage('RUN') {
+          steps {
            sh './prg1'
+         }
        }
   }
 }
